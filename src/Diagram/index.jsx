@@ -34,7 +34,7 @@ const Diagram = () => {
 
   useEffect(() => {
     setPrice('');
-  }, [country]);
+  }, [country, service]);
 
   return (
     <Stack m={2} p={2} border={'1px dashed gray'} borderRadius={2}>

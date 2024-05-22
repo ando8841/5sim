@@ -173,7 +173,7 @@ const PriceList = ({ country, countriesNames, service, priceFilter }) => {
             )
           )
         ) : (
-          <span>empty..</span>
+          <span>{isFetching ? 'Loading' : 'Empty'}..</span>
         )}
       </List>
     </>
