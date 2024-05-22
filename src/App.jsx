@@ -1,6 +1,6 @@
-import Diagram from "./Diagram";
+import Diagram from './Diagram';
 
 const App = () => {
-    return <Diagram/>
-}
-export default App
+  return <Diagram />;
+};
+export default App;
