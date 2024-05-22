@@ -42,31 +42,45 @@ const Diagram = () => {
         Диаграмма
       </Typography>
       <Stack gap={1} direction="row" pb={2} flexWrap="wrap">
-        <FormControl sx={{ minWidth: 200 }}>
-          <InputLabel>Страна</InputLabel>
-          <Select
-            value={country}
-            onChange={e => setCountry(e.target.value)}
-            label="Страна"
-          >
-            {countries?.map(({ label, value }) => (
-              <MenuItem key={value} value={value}>
-                {label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-
-        <FormControl sx={{ minWidth: 200 }}>
+        <FormControl sx={{ minWidth: 270 }}>
           <InputLabel>Сервис</InputLabel>
           <Select
             value={service}
             label="Сервис"
             onChange={e => setService(e.target.value)}
+            MenuProps={{
+              PaperProps: {
+                style: {
+                  maxHeight: 400,
+                },
+              },
+            }}
           >
             {services?.map(service => (
               <MenuItem key={service} value={service}>
                 {service}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl sx={{ minWidth: 270 }}>
+          <InputLabel>Страна</InputLabel>
+          <Select
+            value={country}
+            onChange={e => setCountry(e.target.value)}
+            label="Страна"
+            MenuProps={{
+              PaperProps: {
+                style: {
+                  maxHeight: 400,
+                },
+              },
+            }}
+          >
+            {countries?.map(({ label, value }) => (
+              <MenuItem key={value} value={value}>
+                {label}
               </MenuItem>
             ))}
           </Select>
