@@ -32,6 +32,10 @@ const Diagram = () => {
     }
   }, [countries, countriesNames]);
 
+  useEffect(() => {
+    setPrice('');
+  }, [country]);
+
   return (
     <Stack m={2} p={2} border={'1px dashed gray'} borderRadius={2}>
       <Typography variant="h5" gutterBottom>
@@ -72,7 +76,7 @@ const Diagram = () => {
           <InputLabel>Цена</InputLabel>
           <Select
             label="Цена"
-            value={price}
+            value={price || ''}
             onChange={e => setPrice(e.target.value)}
           >
             <MenuItem value="10">&lt;10</MenuItem>
